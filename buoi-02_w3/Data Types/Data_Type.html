@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>JavaScript có 8 kiểu dữ liệu
+        1. Chuỗi
+        2. Số
+        3. Bigint
+        4. Boolean
+        5. Không xác định
+        6. Null
+        7. Biểu tượng
+        8. Đối tượng
+        
+        Kiểu dữ liệu đối tượng
+        Kiểu dữ liệu đối tượng có thể chứa:
+        
+        1. Một đối tượng
+        2. Một mảng
+        3. Một ngày
+    </p>
+    <script>
+        // Numbers:
+        let length = 16;
+        let weight = 7.5;
+        // Strings:
+        let color = "Yellow";
+        let lastName = "Johnson";
+        // Booleans
+        let z = true;
+        let y = false;
+        // Object:
+        const person = {firstName:"John", lastName:"Doe"};
+        // Array object:
+        const cars = ["Saab", "Volvo", "BMW"];
+        // Date object:
+        const date = new Date("2022-03-25");
+
+        // JavaScript has dynamic types
+        let x;       // Now x is undefined
+        x = 5;       // Now x is a Number
+        x = "John";  // Now x is a String
+
+        // Booleans chỉ có thể có hai giá trị: truehoặc false.
+
+        /*Các đối tượng JavaScript được viết bằng dấu ngoặc nhọn {}.
+        Các thuộc tính của đối tượng được viết dưới dạng các cặp tên:giá trị, được phân tách bằng dấu phẩy*/
+
+        /*Bạn có thể sử dụng toán tử JavaScript typeofđể tìm loại biến JavaScript.\
+        Toán typeoftử trả về kiểu của một biến hoặc một biểu thức*/
+        typeof ""             // Returns "string"
+        typeof "John"         // Returns "string"
+        typeof "John Doe"     // Returns "string"
+
+        // Trong JavaScript, một biến không có giá trị, có giá trị undefined
+        let car;    // Value is undefined, type is undefined
+
+        // Một giá trị trống không liên quan gì đến undefined
+        let car1 = "";    // The value is "", the typeof is "string"
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Variables có thể được khai báo theo 4 cách</p>
+    <ul>
+        <li>Automatically</li>
+        <li>Dùng var</li>
+        <li>Dùng let</li>
+        <li>Dùng const</li>
+    </ul>
+    <p>Khi nào nên sử dụng var, let hoặc const</p>
+    <ul>
+        <li>Luôn khai báo biến</li>
+        <li>Luôn sử dụng <b>const</b> khi giá trị không thay đổi</li>
+        <li>Luôn sử dụng <b>const</b> khi kiểu khôpng thay đổi(mảng và object)</li>
+        <li>Chỉ sử dụng <b>let</b> khiing không thể sử dụng <b>cost</b></li>
+        <li>Chỉ sử dụng <b>var</b> nếu phải dùng các trình duyệt cũ</li>
+    </ul>
+    <p>The general rules for constructing names for variables (unique identifiers) are:</p>
+    <ul>
+        <li>Names can contain letters, digits, underscores, and dollar signs</li>
+        <li>Names must begin with a letter</li>
+        <li>Names can also begin with $ and _ (but we will not use it in this tutorial)</li>
+        <li>Names are case sensitive (y and Y are different variables)</li>
+        <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+    </ul>
+    <script>
+        // khi báo biến
+        let a = 5;
+        var y = "abc";
+        const b = 10;
+        let  lastName, firstName;
+        const $ = "dola";
+        const _ =  " ";
+    </script>
+</body>
+</html>

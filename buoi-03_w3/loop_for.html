@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>JavaScript hỗ trợ các loại vòng lặp khác nhau</p>
+    <ul>
+        <li>for- lặp qua một khối mã một số lần</li>
+        <li>for/in- lặp qua các thuộc tính của một đối tượng</li>
+        <li>for/of- lặp qua các giá trị của một đối tượng có thể lặp lại</li>
+        <li>while- lặp qua một khối mã trong khi một điều kiện được chỉ định là đúng</li>
+        <li>do/while- cũng lặp qua một khối mã trong khi một điều kiện cụ thể là đúng</li>
+    </ul>
+    <p>Vòng lặp for tạo một vòng lặp với 3 biểu thức tùy chọn:</p>
+    <ul>
+        <li>Biểu thức 1 được thực thi (một lần) trước khi thực thi khối mã.</li>
+        <li>Biểu thức 2 xác định điều kiện để thực thi khối mã.</li>
+        <li>Biểu thức 3 được thực thi (mỗi lần) sau khi khối mã đã được thực thi.</li>
+    </ul>
+
+    <p>có thể bỏ qua biểu thức 1 (như khi các giá trị của bạn được đặt trước khi vòng lặp bắt đầu)</p>
+    <script>
+        let i = 2;
+        let len = cars.length;
+        let text = "";
+        for (; i < len; i++) {
+        text += cars[i] + "<br>";
+        }
+    </script>
+    <p>Biểu thức 3 có thể làm bất cứ điều gì như tăng âm (i--), tăng dương (i = i + 15) hoặc bất kỳ điều gì khác.
+
+        Biểu thức 3 cũng có thể được bỏ qua (như khi bạn tăng các giá trị của mình bên trong vòng lặp)
+    </p>
+    <script>
+        let i2 = 0;
+        let len2 = cars.length;
+        let text2 = "";
+        for (; i2 < len2; ) {
+        text2 += cars[i2] + "<br>";
+        i2++;
+        }
+    </script>
+</body>
+</html>

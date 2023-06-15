@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sử dụng switch câu lệnh để chọn một trong nhiều khối mã sẽ được thực thi.</p>
+    <p>Đây là cách nó hoạt động:</p>
+    <ul>
+        <li>Biểu thức chuyển đổi được đánh giá một lần.</li>
+        <li>Giá trị của biểu thức được so sánh với các giá trị của từng trường hợp.</li>
+        <li>Nếu khớp, khối mã liên quan sẽ được thực thi.</li>
+        <li>Nếu không khớp, khối mã mặc định sẽ được thực thi.</li>
+    </ul>
+    <h3>Từ khóa <b>break</b></h3>
+    <p>Khi JavaScript tiếp cận một break từ khóa, nó sẽ thoát ra khỏi khối chuyển đổi.
+
+        Điều này sẽ dừng thực thi bên trong khối chuyển đổi.
+        
+        Không cần thiết phải ngắt trường hợp cuối cùng trong khối chuyển đổi. Khối bị phá vỡ (kết thúc) ở đó.
+    </p>
+    <script>
+        switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+        }
+    </script>
+    <h3>Từ khóa <b>default</b></h3>
+    <p>Từ khóa default chỉ định mã sẽ chạy nếu không có trường hợp khớp</p>
+    <script>
+        switch (new Date().getDay()) {
+        case 6:
+            text = "Today is Saturday";
+            break;
+        case 0:
+            text = "Today is Sunday";
+            break;
+        default:
+            text = "Looking forward to the Weekend";
+        }
+    </script>
+    <h3>Common Code Blocks</h3>
+    <p>Đôi khi bạn sẽ muốn các trường hợp chuyển đổi khác nhau sử dụng cùng một mã.
+
+        Trong trường hợp ví dụ này, 4 và 5 chia sẻ cùng một khối mã và 0 và 6 chia sẻ một khối mã khác
+    </p>
+    <script>
+        switch (new Date().getDay()) {
+        case 4:
+        case 5:
+            text = "Soon it is Weekend";
+            break;
+        case 0:
+        case 6:
+            text = "It is Weekend";
+            break;
+        default:
+            text = "Looking forward to the Weekend";
+        }
+    </script>
+
+    <p>Switching Details</p>
+    <ul>
+        <li>Nếu nhiều trường hợp khớp với một giá trị trường hợp, thì trường hợp đầu tiên được chọn</li>
+        <li>Nếu không tìm thấy trường hợp nào phù hợp, chương trình sẽ tiếp tục với nhãn <b>default</b> .</li>
+        <li>Nếu không tìm thấy nhãn mặc định, chương trình sẽ tiếp tục với (các) after the switch</li>
+    </ul>
+</body>
+</html>

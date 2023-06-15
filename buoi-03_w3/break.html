@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Câu lệnh break "nhảy ra" của một vòng lặp.</p>
+    <p>Câu lệnh continue "nhảy qua" một lần lặp trong vòng lặp</p>
+    <script>
+        // break:
+        for (let i = 0; i < 10; i++) {
+        if (i === 3) { break; }
+        text += "The number is " + i + "<br>";
+        }
+
+        // continue
+        for (let i = 0; i < 10; i++) {
+        if (i === 3) { continue; }
+        text += "The number is " + i + "<br>";
+        }
+
+        // JavaScript Labels
+        /*  Chỉ có thể sử dụng câu lệnh (có hoặc không có tham chiếu nhãn) để bỏ qua một lần lặp vòng lặp
+        Câu breaklệnh, không có tham chiếu nhãn, chỉ có thể được sử dụng để nhảy ra khỏi vòng lặp hoặc switch
+        Với một tham chiếu labels, câu lệnh break có thể được sử dụng để nhảy ra khỏi bất kỳ khối mã nào
+         */
+        const cars = ["BMW", "Volvo", "Saab", "Ford"];
+        list: {
+        text += cars[0] + "<br>";
+        text += cars[1] + "<br>";
+        break list;
+        text += cars[2] + "<br>";
+        text += cars[3] + "<br>";
+        }
+    </script>
+</body>
+</html>

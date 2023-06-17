@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Changing HTML Content</h2>
+    <p>use this syntax:
+        document.getElementById(id).innerHTML = new HTML
+    </p>
+    <h1 id="id01">Old Heading</h1>
+    <script>
+        const element = document.getElementById("id01");
+        element.innerHTML = "New Heading";
+    </script>
+
+
+    <h2>Changing the Value of an Attribute</h2>
+    <p>use this syntax:
+        document.getElementById(id).attribute = new value
+    </p>
+    <img id="myImage" src="smiley.gif">
+    <script>
+        document.getElementById("myImage").src = "landscape.jpg";
+    </script>
+
+    
+    <h2>Dynamic HTML content</h2>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo").innerHTML = "Date : " + Date(); 
+    </script>
+
+    <h2>document.write()</h2>
+    <p>Bla bla bla</p>
+    <script>
+        document.write(Date());
+    </script>
+    <p>Bla bla bla</p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Phương addEventListener()thức đính kèm một trình xử lý sự kiện vào phần tử đã chỉ định
+        cú pháp: 
+        element.addEventListener(event, function, useCapture);
+            + Tham số đầu tiên là loại sự kiện 
+            + Tham số thứ hai là hàm chúng ta muốn gọi khi sự kiện xảy ra.
+            + Tham số thứ ba là một giá trị boolean chỉ định sử dụng tạo bong bóng sự kiện hay chụp sự kiện. Tham số này là tùy chọn
+    </p>
+    <h2>Event Bubbling or Event Capturing?</h2>
+        <p>
+            In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event
+            In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event
+        </p>
+
+        <div id="myDiv1">
+            <h2>Bubbling:</h2>
+            <p id="myP1">Click me!</p>
+          </div><br>
+          
+          <div id="myDiv2">
+            <h2>Capturing:</h2>
+            <p id="myP2">Click me!</p>
+          </div>
+     <script>
+        // Add an Event Handler to an Element:  
+            element.addEventListener("click", function(){ alert("Hello World!"); });
+        // Add Many Event Handlers to the Same Element:
+            element.addEventListener("click", myFunction);
+            element.addEventListener("click", mySecondFunction);
+        // Add an Event Handler to the window Object:
+            window.addEventListener("resize", function(){
+            document.getElementById("demo").innerHTML = sometext;
+            });
+        // Passing Parameters:
+            element.addEventListener("click", function(){ myFunction(p1, p2); });
+
+        // Event Bubbling or Event Capturing:
+            document.getElementById("myP1").addEventListener("click", function() {
+            alert("You clicked the white element!");
+            }, false);
+
+            document.getElementById("myDiv1").addEventListener("click", function() {
+            alert("You clicked the orange element!");
+            }, false);
+
+            document.getElementById("myP2").addEventListener("click", function() {
+            alert("You clicked the white element!");
+            }, true);
+
+            document.getElementById("myDiv2").addEventListener("click", function() {
+            alert("You clicked the orange element!");
+            }, true);
+
+        // The removeEventListener() method:
+            element.removeEventListener("mousemove", myFunction);
+     </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>HTML events:</p>
+    <p>
+        When a user clicks the mouse
+        When a web page has loaded
+        When an image has been loaded
+        When the mouse moves over an element
+        When an input field is changed
+        When an HTML form is submitted
+        When a user strokes a key
+    </p>
+    <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+    <!-- HTML Event Attributes: -->
+    <button onclick="displayDate()">Try it</button> 
+    <button id="myBtn">Try it</button> <br><br>
+    Enter your name: <input type="text" id="fname" onchange="upperCase()">
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p><br>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38;width:120px;height:20px;padding:40px;">Mouse Over Me</div>
+
+
+    <script>
+        function changeText(id) {
+        id.innerHTML = "Ooops!";
+        }
+
+        document.getElementById("myBtn").onclick = displayDate;  //Assign Events Using the HTML DOM
+
+
+        // The onload and onunload Events:
+        function checkCookies() {
+            var text = "";
+            if (navigator.cookieEnabled == true) {
+                text = "Cookies are enabled.";
+            } else {
+                text = "Cookies are not enabled.";
+            }
+        }
+
+        // The onchange Event:
+        function upperCase() {
+            const x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+
+        // The onmouseover and onmouseout Events: 
+        function mOver(obj) {
+            obj.innerHTML = "Thank You"
+            }
+
+            function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
+    </script>
+</body>
+</html>

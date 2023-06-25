@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>The JavaScript apply() Method</h3>
+    <p>
+        The apply() method is similar to the call() method
+    </p>
+    <script>
+        const person = {
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+        }
+        const person1 = {
+        firstName: "Mary",
+        lastName: "Doe"
+        }
+        person.fullName.apply(person1);
+    </script>
+
+    <h3>The Difference Between call() and apply()</h3>
+    <p>
+        The call() method takes arguments separately.
+        The apply() method takes arguments as an array.
+        The apply() method is very handy if you want to use an array instead of an argument list.
+    </p>
+
+    <h3>The apply() Method with Arguments</h3>
+    <script>
+        const personn = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+        }
+        const personn1 = {
+        firstName:"John",
+        lastName: "Doe"
+        }
+        personn.fullName.apply(personn1, ["Oslo", "Norway"]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quy tắc tham số</h1>
+    <p>
+        Định nghĩa hàm JavaScript không chỉ định loại dữ liệu cho tham số.
+        Các hàm JavaScript không thực hiện kiểm tra kiểu trên các đối số đã truyền.
+        Các hàm JavaScript không kiểm tra số lượng đối số nhận được.
+    </p>
+
+    <h1>Thông số mặc định</h1>
+    <p>Nếu một hàm được gọi với các đối số bị thiếu (ít hơn so với khai báo), các giá trị bị thiếu sẽ được đặt thành undefined.</p>
+    <script>
+        // Giá trị tham số mặc định:
+            function myFunction(x, y = 10) { //Nếu y không được thông qua hoặc không xác định, thì y = 10.
+                return x + y;
+            }
+            myFunction(5);
+
+
+        // The Arguments Object: 
+        /*
+            Các hàm JavaScript có một đối tượng tích hợp được gọi là đối tượng đối số.
+            Đối tượng đối số chứa một mảng các đối số được sử dụng khi hàm được gọi (gọi).
+            Bằng cách này, bạn có thể chỉ cần sử dụng một hàm để tìm (ví dụ) giá trị cao nhất trong danh sách các số
+        */
+            x = findMax(1, 123, 500, 115, 44, 88);
+            function findMax() {
+                let max = -Infinity;
+                for (let i = 0; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                    max = arguments[i];
+                    }
+                }
+                return max;
+            }
+    </script>
+</body>
+</html>

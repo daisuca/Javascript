@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>All Functions are Methods</h2>
+    <p>
+      In JavaScript all functions are object methods. If a function is not a
+      method of a JavaScript object, it is a function of the global object
+    </p>
+
+    <h3>The JavaScript call() Method</h3>
+    <p>
+      he call() method is a predefined JavaScript method. It can be used to
+      invoke (call) a method with an owner object as an argument (parameter).
+      With call(), an object can use a method belonging to another object.
+    </p>
+    <script>
+      const person = {
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      const person1 = {
+        firstName: "John",
+        lastName: "Doe",
+      };
+      const person2 = {
+        firstName: "Mary",
+        lastName: "Doe",
+      };
+      person.fullName.call(person1);
+    </script>
+
+    <h3>The call() Method with Arguments</h3>
+    <p>The call() method can accept arguments</p>
+    <script>
+      const personn = {
+        fullName: function (city, country) {
+          return (
+            this.firstName + " " + this.lastName + "," + city + "," + country
+          );
+        },
+      };
+
+      const person3 = {
+        firstName: "John",
+        lastName: "Doe",
+      };
+
+      personn.fullName.call(person3, "Oslo", "Norway");
+    </script>
+  </body>
+</html>

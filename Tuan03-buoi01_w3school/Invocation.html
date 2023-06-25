@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Invocation</h1>
+    <p>
+      The code inside a function is not executed when the function is defined.
+      The code inside a function is executed when the function is invoked. It is
+      common to use the term "call a function" instead of "invoke a function".
+      It is also common to say "call upon a function", "start a function", or
+      "execute a function".
+    </p>
+
+    <p>
+      What is this?: In an object method, this refers to the object. Alone, this
+      refers to the global object. In a function, this refers to the global
+      object. In a function, in strict mode, this is undefined. In an event,
+      this refers to the element that received the event. Methods like call(),
+      apply(), and bind() can refer this to any object.
+    </p>
+    <script>
+      // Invoking a Function as a Function:
+      function myFunction(a, b) {
+        return a * b;
+      }
+      myFunction(10, 2);
+
+      // Invoking a Function as a Method:
+      const myObject = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      myObject.fullName();
+
+      // Invoking a Function with a Function Constructor:
+
+        function myFunction(arg1, arg2) {
+            this.firstName = arg1;
+            this.lastName = arg2;
+        }
+        // This creates a new object
+        const myObj = new myFunction("John", "Doe");
+        // This will return "John"
+        myObj.firstName;
+    </script>
+  </body>
+</html>

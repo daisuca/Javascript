@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>A functioncó thể truy cập tất cả các biến được xác định bên trong hàm</h2>
+    <script>
+        // VD1:
+        function myFunction() {
+            let a = 4;
+            return a * a;
+        }
+
+
+        // VD2:
+        let a = 4;
+            function myFunction() {
+            return a * a;
+        }
+    </script>
+    <p>
+        Trong ví dụ trước, a là một biến toàn cục .
+        Trong một trang web, các biến toàn cục thuộc về trang đó.
+        Các biến toàn cầu có thể được sử dụng (và thay đổi) bởi tất cả các tập lệnh khác trong trang.
+        Trong ví dụ đầu tiên, a là một biến cục bộ .
+        Biến cục bộ chỉ có thể được sử dụng bên trong hàm mà nó được xác định. Nó bị ẩn khỏi các chức năng khác và mã kịch bản khác.
+        Các biến toàn cục và cục bộ có cùng tên là các biến khác nhau. Sửa đổi cái này, không sửa đổi cái kia.
+    </p>
+    <b>Các biến được tạo không có từ khóa khai báo ( var, let, hoặc const) luôn là biến toàn cục, ngay cả khi chúng được tạo bên trong một hàm.</b>
+
+    <h2>A Counter Dilemma</h2>
+    <p>
+        Giả sử bạn muốn sử dụng một biến để đếm thứ gì đó và bạn muốn bộ đếm này có sẵn cho tất cả các chức năng.
+        Bạn có thể sử dụng biến toàn cục và a functionđể tăng bộ đếm
+    </p>
+    <script>
+        let counter = 0;
+        // Function to increment counter
+        function add() {
+        counter += 1;
+        }
+        // Call add() 3 times
+        add();
+        add();
+        add();
+    </script>
+
+    <h2>JavaScript Nested Functions</h2>
+    <p>
+        All functions have access to the global scope.  
+        In fact, in JavaScript, all functions have access to the scope "above" them.
+        JavaScript supports nested functions. Nested functions have access to the scope "above" them.
+    </p>
+    <script>
+        function add() {
+        let counter = 0;
+        function plus() {counter += 1;}
+        plus();   
+        return counter;
+        }
+    </script>
+
+
+    <h2>JavaScript Closures</h2>
+    <script>
+        const add = (function () {
+            let counter = 0;
+            return function () {counter += 1; return counter}
+        })();
+
+        add();
+        add();
+        add();
+    </script>
+</body>
+</html>

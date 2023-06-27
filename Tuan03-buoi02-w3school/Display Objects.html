@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Some common solutions to display JavaScript objects are:</h3>
+    <p>
+        Displaying the Object Properties by name
+        Displaying the Object Properties in a Loop
+        Displaying the Object using Object.values()
+        Displaying the Object using JSON.stringify()
+    </p>
+
+    <h3>Displaying Object Properties</h3>
+    <script>
+        const person = {
+        name: "John",
+        age: 30,
+        city: "New York"
+        };
+
+        document.getElementById("demo").innerHTML =
+        person.name + "," + person.age + "," + person.city;
+    </script>
+
+
+    <h3>Displaying the Object in a Loop</h3>
+    <script>
+        let txt = "";
+        for (let x in person) {
+        txt += person[x] + " ";
+        };
+
+        document.getElementById("demo").innerHTML = txt;
+    </script>
+
+
+    <h3>Using Object.values()</h3>
+    <script>
+        const myArray = Object.values(person);
+    </script>
+
+    <h3>Using JSON.stringify()</h3>
+    <script>
+        let myString = JSON.stringify(person);
+    </script>
+
+    <h4>Stringify Dates</h4>
+    <script>
+        const person1 = {
+        name: "John",
+        today: new Date()
+        };
+
+        let myString1 = JSON.stringify(person);
+    </script>
+
+
+    <h4>Stringify Functions</h4>
+    <script>
+        const person2= {
+        name: "John",
+        age: function () {return 30;}
+        };
+
+        let myString2 = JSON.stringify(person);
+    </script>
+
+
+    <h4>Stringify Arrays</h4>
+    <script>
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        let myString3 = JSON.stringify(arr);
+    </script>
+</body>
+</html>

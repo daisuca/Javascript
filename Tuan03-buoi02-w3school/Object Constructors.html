@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        }
+    </script>
+    <p>
+        The way to create an "object type", is to use an object constructor function.
+        In the example above, function Person() is an object constructor function.
+        Objects of the same type are created by calling the constructor function with the new keyword:
+    </p>
+    <script>
+        const myFather = new Person("John", "Doe", 50, "blue");
+        const myMother = new Person("Sally", "Rally", 48, "green");
+    </script>
+
+
+    <h3>Adding a Property to an Object</h3>
+    <script>
+        myFather.nationality = "English";
+    </script>
+
+    <h3>Adding a Method to an Object</h3>
+    <script>
+        myFather.name = function () {
+        return this.firstName + " " + this.lastName;
+        };
+    </script>
+
+
+    <h3>Adding a Property to a Constructor</h3>
+    <script>
+        function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+        this.nationality = "English";
+        }
+    </script>
+
+
+    <h3>Adding a Method to a Constructor</h3>
+    <script>
+        function Person(firstName, lastName, age, eyeColor) {
+        this.firstName = firstName; 
+        this.lastName = lastName;
+        this.age = age;
+        this.eyeColor = eyeColor;
+        this.changeName = function (name) {
+            this.lastName = name;
+        };
+        }
+    </script>
+
+
+    <h3>Built-in JavaScript Constructors</h3>
+    <script>
+        new String()    // A new String object
+        new Number()    // A new Number object
+        new Boolean()   // A new Boolean object
+        new Object()    // A new Object object
+        new Array()     // A new Array object
+        new RegExp()    // A new RegExp object
+        new Function()  // A new Function object
+        new Date()      // A new Date object
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Prototype Inheritance</h3>
+    <p>
+        All JavaScript objects inherit properties and methods from a prototype:
+            Date objects inherit from Date.prototype
+            Array objects inherit from Array.prototype
+            Person objects inherit from Person.prototype
+        The Object.prototype is on the top of the prototype inheritance chain:
+        Date objects, Array objects, and Person objects inherit from Object.prototype
+    </p>
+
+    <h3>Using the prototype Property</h3>
+    <script>
+        function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+        }
+
+        Person.prototype.nationality = "English";
+    </script>
+    <p>The JavaScript prototype property also allows you to add new methods to objects constructors:</p>
+    <script>
+        function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+        }
+
+        Person.prototype.name = function() {
+        return this.firstName + " " + this.lastName;
+        };
+    </script>
+</body>
+</html>

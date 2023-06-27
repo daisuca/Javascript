@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Properties are the values associated with a JavaScript object.
+        A JavaScript object is a collection of unordered properties.
+        Properties can usually be changed, added, and deleted, but some are read only.
+    </p>
+    <h4>The syntax for accessing the property of an object is:</h4>
+    <p>
+        objectName.property <br>
+        or
+        <br>
+        objectName["property"]  <br>
+        or
+        <br>
+        objectName[expression]
+    </p>
+
+    <h4>
+        JavaScript for...in Loop
+    </h4>
+    <script>
+        const person = {
+            fname:" John",
+            lname:" Doe",
+            age: 25
+        };
+
+        for (let x in person) {
+            txt += person[x];
+        }
+    </script>
+
+    <h3>Adding New Properties</h3>
+    <p>
+        You can add new properties to an existing object by simply giving it a value.
+        Assume that the person object already exists - you can then give it new properties:
+    </p>
+    <script>
+        person.nationality = "English";
+    </script>
+
+
+    <h3>Deleting Properties</h3>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        delete person.age;
+        // or 
+        delete person["age"];
+    </script>
+    <p>
+        The delete keyword deletes both the value of the property and the property itself.
+        After deletion, the property cannot be used before it is added back again.
+        The delete operator is designed to be used on object properties. It has no effect on variables or functions.
+        The delete operator should not be used on predefined JavaScript object properties. It can crash your application.
+    </p>
+
+    <h3>Nested Objects</h3>
+    <script>
+        myObj = {
+            name:"John",
+            age:30,
+            cars: {
+                car1:"Ford",
+                car2:"BMW",
+                car3:"Fiat"
+            }
+        }
+        myObj.cars.car2;
+        // or
+        myObj.cars["car2"];
+        // or
+        myObj["cars"]["car2"];
+        // or
+        let p1 = "cars";
+        let p2 = "car2";
+        myObj[p1][p2];
+    </script>
+
+
+    <h3>Nested Arrays and Objects</h3>
+    <script>
+        const myObj = {
+            name: "John",
+            age: 30,
+            cars: [
+                {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+                {name:"BMW", models:["320", "X3", "X5"]},
+                {name:"Fiat", models:["500", "Panda"]}
+            ]
+        }
+        // To access arrays inside arrays, use a for-in loop for each array:
+        for (let i in myObj.cars) {
+            x += "<h1>" + myObj.cars[i].name + "</h1>";
+            for (let j in myObj.cars[i].models) {
+                x += myObj.cars[i].models[j];
+            }
+        }
+    </script>
+
+
+    <h3>Property Attributes</h3>
+    <p>
+        All properties have a name. In addition they also have a value.
+        The value is one of the property's attributes.
+        Other attributes are: enumerable, configurable, and writable.
+        These attributes define how the property can be accessed (is it readable?, is it writable?)
+        In JavaScript, all attributes can be read, but only the value attribute can be changed (and only if the property is writable).
+        ( ECMAScript 5 has methods for both getting and setting all property attributes)
+    </p>
+</body>
+</html>

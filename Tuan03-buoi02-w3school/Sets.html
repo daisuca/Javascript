@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>
+        A JavaScript Set is a collection of unique values.
+        Each value can only occur once in a Set.
+        A Set can hold any value of any data type.
+    </b>
+
+
+    <h3>Set Methods</h3>
+    <p>
+        new Set()	Creates a new Set
+        add()	Adds a new element to the Set
+        delete()	Removes an element from a Set
+        has()	Returns true if a value exists
+        clear()	Removes all elements from a Set
+        forEach()	Invokes a callback for each element
+        values()	Returns an Iterator with all the values in a Set
+        keys()	Same as values()
+        entries()	Returns an Iterator with the [value,value] pairs from a Set
+        size	Returns the number elements in a Set
+    </p>
+
+
+    <h3>How to Create a Set</h3>
+    <p>
+        Passing an Array to new Set()
+        Create a new Set and use add() to add values
+        Create a new Set and use add() to add variables
+    </p>
+
+    <h3>The new Set() Method</h3>
+    <script>
+        const letters = new Set();
+        // Add Values to the Set
+        letters.add("a");
+        letters.add("b");
+        letters.add("c");
+    </script>
+
+
+    <h3>The add() Method</h3>
+    <script>
+        letters.add("a");
+        letters.add("b");
+        letters.add("c");
+        letters.add("c");
+        letters.add("c");
+        letters.add("c");
+        letters.add("c");
+        letters.add("c");
+    </script>
+
+    <h3>The forEach() Method</h3>
+    <script>
+        const letters1 = new Set(["a","b","c"]);
+        // List all entries
+        let text = "";
+        letters1.forEach (function(value) {
+        text += value;
+        })
+
+    </script>
+
+
+    <h3>The values() Method</h3>
+    <script>
+        // Create an Iterator
+        const myIterator = letters.values();
+
+        // List all Values
+        let text1 = "";
+        for (const entry of myIterator) {
+        text1 += entry;
+        }
+    </script>
+
+    <h3>The keys() Method</h3>
+    <p>
+        A Set has no keys.
+        keys() returns the same as values().
+        This makes Sets compatible with Maps.
+    </p>
+
+
+    <h3>The entries() Method</h3>
+    <script>
+        // Create an Iterator
+        const myIterator1 = letters.entries();
+
+        // List all Entries
+        let text2 = "";
+        for (const entry of myIterator1) {
+        text2 += entry;
+        }
+    </script>
+</body>
+</html>

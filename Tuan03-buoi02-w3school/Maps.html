@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>
+        A Map holds key-value pairs where the keys can be any datatype.
+        A Map remembers the original insertion order of the keys.
+        A Map has a property that represents the size of the map.
+    </b>
+
+
+    <h3>How to Create a Map</h3>
+    <p>
+        Passing an Array to new Map()
+        Create a Map and use Map.set()
+    </p>
+
+    <h3>new Map()</h3>
+    <script>
+        const fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200]
+        ]);
+    </script>
+
+
+    <h3>Map.set()</h3>
+    <script>
+        const fruit = new Map();
+        // Set Map Values
+        fruit.set("apples", 500);
+        fruit.set("bananas", 300);
+        fruit.set("oranges", 200);
+    </script>
+
+
+    <h3>Map.get()</h3>
+    <script>
+        fruits.get("apples"); 
+    </script>
+
+
+    <h3>Map.size</h3>
+    <script>
+        fruits.size;
+    </script>
+
+    <h3>Map.delete()</h3>
+    <script>
+        fruits.delete("apples");
+    </script>
+
+
+    <h3>Map.clear()</h3>
+    <script>
+        fruits.clear();
+    </script>
+
+
+    <h3>Map.has()</h3>
+    <script>
+        fruits.delete("apples");
+        fruits.has("apples");
+    </script>
+
+
+    <h3>Map.forEach()</h3>
+    <script>
+        // List all entries
+        let text = "";
+        fruits.forEach (function(value, key) {
+        text += key + ' = ' + value;
+        })
+    </script>
+
+    <h3>Map.entries()</h3>
+    <script>
+        for (const x of fruits.entries()) {
+            text += x;
+        }
+    </script>
+
+
+    <h3>Map.keys()</h3>
+    <script>
+        for (const x of fruits.keys()) {
+            text += x;
+        }
+    </script>
+
+
+    <h3>Map.values()</h3>
+    <script>
+        for (const x of fruits.values()) {
+            text += x;
+        }
+    </script>
+</body>
+</html>

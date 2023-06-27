@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>JavaScript Getter (The get Keyword)</h3>
+    <script>
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "en",
+        get lang() {
+          return this.language;
+        },
+      };
+    </script>
+
+    <h3>JavaScript Setter (The set Keyword)</h3>
+    <script>
+      const person1 = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "",
+        set lang(lang) {
+          this.language = lang;
+        },
+      };
+
+      // Set an object property using a setter:
+      person1.lang = "en";
+    </script>
+
+    <h3>JavaScript Function or Getter?</h3>
+    <script>
+      const person2 = {
+        firstName: "John",
+        lastName: "Doe",
+        get fullName() {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+    </script>
+
+    <h3>Why Using Getters and Setters?</h3>
+    <p>
+      It gives simpler syntax It allows equal syntax for properties and methods
+      It can secure better data quality It is useful for doing things
+      behind-the-scenes
+    </p>
+
+    <h3>Object.defineProperty()</h3>
+    <script>
+      const obj = { counter: 0 };
+
+      // Define setters and getters
+      Object.defineProperty(obj, "reset", {
+        get: function () {
+          this.counter = 0;
+        },
+      });
+      Object.defineProperty(obj, "increment", {
+        get: function () {
+          this.counter++;
+        },
+      });
+      Object.defineProperty(obj, "decrement", {
+        get: function () {
+          this.counter--;
+        },
+      });
+      Object.defineProperty(obj, "add", {
+        set: function (value) {
+          this.counter += value;
+        },
+      });
+      Object.defineProperty(obj, "subtract", {
+        set: function (value) {
+          this.counter -= value;
+        },
+      });
+
+      // Play with the counter:
+      obj.reset;
+      obj.add = 5;
+      obj.subtract = 1;
+      obj.increment;
+      obj.decrement;
+    </script>
+  </body>
+</html>

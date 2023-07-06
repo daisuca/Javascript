@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Async Syntax</h2>
+    <p>The keyword async before a function makes the function return a promise:</p>
+    <script>
+        async function myFunction() {
+            return "Hello";
+        }
+
+        // Example:
+        async function myFunction() {
+            return "Hello";
+        }
+        myFunction().then(
+            function(value) {myDisplayer(value);},
+            function(error) {myDisplayer(error);}
+        );
+    </script>
+
+
+    <h2>Await Syntax</h2>
+    <p>
+        The await keyword can only be used inside an async function.
+        The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
+    </p>
+    <script>
+        // Example:
+        async function myDisplay() {
+        let myPromise = new Promise(function(resolve, reject) {
+            resolve("I love You !!");
+        });
+        document.getElementById("demo").innerHTML = await myPromise;
+        }
+        myDisplay();
+
+
+        // Example without reject:
+        async function myDisplay() {
+        let myPromise = new Promise(function(resolve) {
+            resolve("I love You !!");
+        });
+        document.getElementById("demo").innerHTML = await myPromise;
+        }
+        myDisplay();
+
+
+        // Waiting for a Timeout:
+        async function myDisplay() {
+        let myPromise = new Promise(function(resolve) {
+            setTimeout(function() {resolve("I love You !!");}, 3000);
+        });
+        document.getElementById("demo").innerHTML = await myPromise;
+        }
+        myDisplay();
+
+
+        // Waiting for a File:
+        async function getFile() {
+        let myPromise = new Promise(function(resolve) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "mycar.html");
+            req.onload = function() {
+            if (req.status == 200) {
+                resolve(req.response);
+            } else {
+                resolve("File not Found");
+            }
+            };
+            req.send();
+        });
+        document.getElementById("demo").innerHTML = await myPromise;
+        }
+        getFile();
+    </script>
+</body>
+</html>

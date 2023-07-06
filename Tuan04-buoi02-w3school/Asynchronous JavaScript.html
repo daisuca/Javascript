@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Asynchronous JavaScript</h2>
+    <p>callbacks are most often used with asynchronous functions.A typical example is JavaScript setTimeout().</p>
+
+
+    <h2>Waiting for a Timeout</h2>
+    <h1 id="demo"></h1>
+    <script>
+        setTimeout(myFunction, 3000);
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "I love You !!";
+        }
+
+        // Thay vì chuyển tên của một hàm làm đối số cho một hàm khác, thay vào đó, bạn luôn có thể chuyển toàn bộ hàm:
+        setTimeout(function() { myFunction("I love You !!!"); }, 3000);
+        function myFunction(value) {
+            document.getElementById("demo").innerHTML = value;
+        }
+    </script>
+
+
+    <h2>Waiting for Intervals:</h2>
+    <script>
+        setInterval(myFunction, 1000);
+        
+        function myFunction() {
+          let d = new Date();
+          document.getElementById("demo").innerHTML=
+          d.getHours() + ":" +
+          d.getMinutes() + ":" +
+          d.getSeconds();
+        }
+    </script>
+</body>
+</html>

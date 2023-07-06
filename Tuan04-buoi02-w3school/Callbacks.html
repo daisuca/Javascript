@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Call back  là một hàm được truyền dưới dạng đối số cho một hàm khác</p>
+    <h1>Function Sequence</h1>
+    <p>Các hàm JavaScript được thực thi theo trình tự mà chúng được gọi. Không theo trình tự chúng được xác định.</p>
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        function myFirst() {
+            myDisplayer("Hello");
+        }
+        function mySecond() {
+            myDisplayer("Goodbye");
+        }
+        myFirst();
+        mySecond();
+    </script>
+
+
+    <h1>Sequence Control</h1>
+    <p>Giả sử bạn muốn thực hiện một phép tính, sau đó hiển thị kết quả.</p>
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        function myCalculator(num1, num2) {
+            let sum = num1 + num2;
+            return sum;
+        }
+        let result = myCalculator(5, 5);
+        myDisplayer(result);
+    </script>
+
+
+    <h1>JavaScript Callbacks</h1>
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        function myCalculator(num1, num2, myCallback) {
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+        myCalculator(5, 5, myDisplayer);
+    </script>
+</body>
+</html>

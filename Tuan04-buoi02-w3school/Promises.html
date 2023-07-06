@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Promise Object</h2>
+    <script>
+        // Promise Syntax:
+        let myPromise = new Promise(function(myResolve, myReject) {
+        // "Producing Code" (May take some time)
+        myResolve(); // when successful
+        myReject();  // when error
+        });
+        // "Consuming Code" (Must wait for a fulfilled Promise)
+        myPromise.then(
+        function(value) { /* code if successful */ },
+        function(error) { /* code if some error */ }
+        );
+    </script>
+    <p>
+        Đối tượng Promise hỗ trợ hai thuộc tính: trạng thái và kết quả .
+        Trong khi một đối tượng Promise đang "chờ xử lý" (đang hoạt động), kết quả là không xác định.
+        Khi một đối tượng Promise được "hoàn thành", kết quả là một giá trị.
+        Khi một đối tượng Promise bị "từ chối", kết quả là một đối tượng lỗi.
+    </p>
+
+
+    <h2>Promise How To</h2>
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+        let myPromise1 = new Promise(function(myResolve, myReject) {
+        let x = 0;
+        // The producing code (this may take some time)
+        if (x == 0) {
+            myResolve("OK");
+        } else {
+            myReject("Error");
+        }
+        });
+        myPromise1.then(
+        function(value) {myDisplayer(value);},
+        function(error) {myDisplayer(error);}
+        );
+    </script>
+
+
+    <h2>JavaScript Promise Examples</h2>
+    <script>
+        // Example Using Callback:
+        setTimeout(function() { myFunction("I love You !!!"); }, 3000);
+        function myFunction(value) {
+            document.getElementById("demo").innerHTML = value;
+        }
+
+        // Example Using Promise:
+        let myPromise2 = new Promise(function(myResolve, myReject) {
+            setTimeout(function() { myResolve("I love You !!"); }, 3000);
+        });
+
+        myPromise2.then(function(value) {
+            document.getElementById("demo").innerHTML = value;
+        });
+    </script>
+</body>
+</html>

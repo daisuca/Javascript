@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>"use strict";Xác định rằng mã JavaScript sẽ được thực thi ở "chế độ nghiêm ngặt".</b>
+    <p>
+        Chế độ nghiêm ngặt được khai báo bằng cách thêm "use strict"; phần đầu của một tập lệnh hoặc một chức năng.
+        Được khai báo ở đầu tập lệnh, nó có phạm vi toàn cầu (tất cả mã trong tập lệnh sẽ thực thi ở chế độ nghiêm ngặt)
+    </p>
+
+
+    <h2>Why Strict Mode?</h2>
+    <p>
+        Chế độ nghiêm ngặt giúp viết JavaScript "an toàn" dễ dàng hơn
+        Chế độ nghiêm ngặt thay đổi "cú pháp sai" được chấp nhận trước đó thành các lỗi thực sự.
+        Ví dụ, trong JavaScript thông thường, nhập sai tên biến sẽ tạo ra một biến toàn cục mới. Ở chế độ nghiêm ngặt, điều này sẽ gây ra lỗi, khiến cho việc vô tình tạo biến toàn cục là không thể.
+        Trong JavaScript bình thường, nhà phát triển sẽ không nhận được bất kỳ phản hồi lỗi nào khi gán giá trị cho các thuộc tính không thể ghi.
+        Ở chế độ nghiêm ngặt, mọi phép gán cho thuộc tính không thể ghi, thuộc tính chỉ getter, thuộc tính không tồn tại, biến không tồn tại hoặc đối tượng không tồn tại sẽ gây ra lỗi.
+    </p>
+    <script>
+        // Không được phép sử dụng một biến mà không khai báo nó:
+            "use strict";
+            x = 3.14;
+            
+        // Không được phép sử dụng một đối tượng mà không khai báo nó:
+            "use strict";
+            x = {p1:10, p2:20};      // This will cause an error
+
+        // Không được phép xóa một biến (hoặc đối tượng):
+            "use strict";
+            let x = 3.14;
+            delete x;                // This will cause an error
+
+        // Không được phép xóa một hàm:
+            "use strict";
+            function x(p1, p2) {};
+            delete x;                // This will cause an error 
+
+        // Sao chép tên tham số không được phép:
+            "use strict";
+            function x(p1, p1) {};   // This will cause an error
+
+        // Chữ số bát phân không được phép:
+            "use strict";
+            let x = 010;             // This will cause an error
+
+        // Ký tự thoát bát phân không được phép:
+            "use strict";
+            let x = "\010";            // This will cause an error
+
+        // Không được phép ghi vào thuộc tính chỉ đọc:
+            "use strict";
+            const obj = {};
+            Object.defineProperty(obj, "x", {value:0, writable:false});
+            obj.x = 3.14;            // This will cause an error
+
+        // Không được phép ghi vào thuộc tính chỉ nhận:
+            "use strict";
+            const obj = {get x() {return 0} };
+            obj.x = 3.14;            // This will cause an error
+
+        // Không được phép xóa thuộc tính không thể xóa:
+            "use strict";
+            delete Object.prototype; // This will cause an error
+
+        // Từ này evalkhông thể được sử dụng như một biến:
+            "use strict";
+            let eval = 3.14;         // This will cause an error
+
+
+        // arguments cannot be used as a variable:
+            "use strict";
+            let arguments = 3.14;    // This will cause an error
+
+        // The with statement is not allowed:
+            "use strict";
+            with (Math){x = cos(2)}; // This will cause an error
+
+        // eval() can not declare a variable using the var keyword:
+            "use strict";
+            eval ("var x = 2");
+            alert (x);    // This will cause an error
+    </script>
+</body>
+</html>

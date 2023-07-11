@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        The try statement defines a code block to run (to try).
+        The catch statement defines a code block to handle any error.
+        The finally statement defines a code block to run regardless of the result.
+        The throw statement defines a custom error.
+    </p>
+    <p id="demo"></p>
+    <script>
+    try {
+    adddlert("Welcome guest!");
+    }
+    catch(err) {
+    document.getElementById("demo").innerHTML = err.message;
+    }
+    </script>
+
+    <h4>JavaScript Throws Errors</h4>
+    <p>
+        When an error occurs, JavaScript will normally stop and generate an error message.
+        The technical term for this is: JavaScript will <b> throw an exception (throw an error).</b>
+        JavaScript will actually create an Error object with two properties: name and message.
+    </p>
+
+
+    <h4>The throw Statement</h4>
+    <p>The exception can be a JavaScript String, a Number, a Boolean or an Object:</p>
+    <script>
+        throw "Too big";    // throw a text
+        throw 500;          // throw a number
+    </script>
+
+
+    <h4>Example</h4>
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+    <script>
+        function myFunction() {
+        const message = document.getElementById("p01");
+        message.innerHTML = "";
+        let x = document.getElementById("demo").value;
+        try { 
+            if(x.trim() == "")  throw "empty";
+            if(isNaN(x)) throw "not a number";
+            x = Number(x);
+            if(x < 5)  throw "too low";
+            if(x > 10)   throw "too high";
+        }
+        catch(err) {
+            message.innerHTML = "Input is " + err;
+        }
+        }
+    </script>
+
+
+    <h4>The finally Statement</h4>
+    <p>The finally statement lets you execute code, after try and catch, regardless of the result:</p>
+    <script>
+        function myFunction() {
+        const message = document.getElementById("p01");
+        message.innerHTML = "";
+        let x = document.getElementById("demo").value;
+        try {
+            if(x.trim() == "") throw "is empty";
+            if(isNaN(x)) throw "is not a number";
+            x = Number(x);
+            if(x > 10) throw "is too high";
+            if(x < 5) throw "is too low";
+        }
+        catch(err) {
+            message.innerHTML = "Error: " + err + ".";
+        }
+        finally {
+            document.getElementById("demo").value = "";
+        }
+        }
+    </script>
+
+
+    <h2>The Error Object</h2>
+    <h4>Error Name Values:</h4>
+    <p>
+        EvalError      	Đã xảy ra lỗi trong hàm eval()
+        RangeError      Một số "ngoài phạm vi" đã xảy ra
+        ReferenceError  Một tài liệu tham khảo bất hợp pháp đã xảy ra
+        SyntaxError     Đã xảy ra lỗi cú pháp
+        TypeError       A type error has occurred
+        URIError        Đã xảy ra lỗi trong encodeURI()
+    </p>
+</body>
+</html>
